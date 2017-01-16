@@ -15,20 +15,20 @@ In this example, these variables were created in the script.
 
 ###Step 2: Change macro to use object name.
 	Sub ReverseOrientation
-	set ChartOrientation = ActiveDocument.Variables("vChartOrientation")
-	set chart = ActiveDocument.GetSheetObject("CH01") 
-	set p = chart.GetProperties
-	p.ChartProperties.Horizontal = ChartOrientation.GetContent.String
-	chart.SetProperties p
+		set ChartOrientation = ActiveDocument.Variables("vChartOrientation")
+		set chart = ActiveDocument.GetSheetObject("CH01") 
+		set p = chart.GetProperties
+		p.ChartProperties.Horizontal = ChartOrientation.GetContent.String
+		chart.SetProperties p
 	End Sub
 
 	Sub SetNulls
-	set ChartNull = ActiveDocument.Variables("vChartNulls")	
-	set chart = ActiveDocument.GetSheetObject("CH01") 
-	set cp = chart.GetProperties	
-	set dims = cp.Dimensions	
-	dims(0).NullSuppression = ChartNull.GetContent.String	
-	chart.SetProperties cp	
+		set ChartNull = ActiveDocument.Variables("vChartNulls")	
+		set chart = ActiveDocument.GetSheetObject("CH01") 
+		set cp = chart.GetProperties	
+		set dims = cp.Dimensions	
+		dims(0).NullSuppression = ChartNull.GetContent.String	
+		chart.SetProperties cp	
 	End Sub
 
 Modify the line set chart = ActiveDocument.GetSheetObject("CH01") with the object id in the QlikView.
