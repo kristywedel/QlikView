@@ -15,33 +15,20 @@ In this example, these variables were created in the script.
 
 ###Step 2: Change macro to use object name.
 	Sub ReverseOrientation
-	
 	set ChartOrientation = ActiveDocument.Variables("vChartOrientation")
-	
 	set chart = ActiveDocument.GetSheetObject("CH01") 
-	
 	set p = chart.GetProperties
-	
 	p.ChartProperties.Horizontal = ChartOrientation.GetContent.String
-	
 	chart.SetProperties p
-	
 	End Sub
 
 	Sub SetNulls
-	
-	set ChartNull = ActiveDocument.Variables("vChartNulls")
-	
+	set ChartNull = ActiveDocument.Variables("vChartNulls")	
 	set chart = ActiveDocument.GetSheetObject("CH01") 
-	
-	set cp = chart.GetProperties
-	
-	set dims = cp.Dimensions
-	
-	dims(0).NullSuppression = ChartNull.GetContent.String
-	
-	chart.SetProperties cp
-	
+	set cp = chart.GetProperties	
+	set dims = cp.Dimensions	
+	dims(0).NullSuppression = ChartNull.GetContent.String	
+	chart.SetProperties cp	
 	End Sub
 
 Modify the line set chart = ActiveDocument.GetSheetObject("CH01") with the object id in the QlikView.
@@ -52,13 +39,11 @@ Add two actions to the text or button object. One action will toggle the variabl
 For the Show/Hide Nulls button,
 
 	vChartNulls =if(vChartNulls = 'false', 'true', 'false') 
-
 	Run Macro = SetNulls
 
 For the Show/Hide Nulls button,
 
 	vChartOrientation =if(vChartOrientation = 'false', 'true', 'false') 
-
 	Run Macro = ReverseOrientation 
 
 ![alt tag](https://github.com/kristywedel/QlikView/blob/master/QlikView.png)
