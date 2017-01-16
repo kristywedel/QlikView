@@ -1,7 +1,7 @@
 ##Overview
 Users may wish to change the look of a chart in a QlikView app, and it’s possible to add shortcuts to allow them to make changes to properties such as the orientation or whether nulls are displayed. 
 
-![alt tag](https://github.com/kristywedel/QlikView/blob/master/qlikview1.png)
+![alt tag](https://github.com/kristywedel/QlikView/blob/master/QlikView1.png)
 
 
 
@@ -45,5 +45,5 @@ For the Show/Hide Nulls button,
 vChartOrientation =if(vChartOrientation = 'false', 'true', 'false') 
 
 Run Macro = ReverseOrientation 
-![alt tag](https://github.com/kristywedel/QlikView/blob/master/qlikview.png)
+![alt tag](https://github.com/kristywedel/QlikView/blob/master/QlikView.png)
 
