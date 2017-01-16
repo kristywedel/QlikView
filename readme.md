@@ -11,16 +11,23 @@ Users may wish to change the look of a chart in a QlikView app, and it’s possi
 In this example, these variables were created in the script.
 
 _LET vChartOrientation = 'true';_
+
 _LET vChartNulls = 'true';_
 
 ###Step 2: Change macro to use object name.
-Sub ReverseOrientation
-	set ChartOrientation = ActiveDocument.Variables("vChartOrientation")
-	set chart = ActiveDocument.GetSheetObject("CH01") 
-	set p = chart.GetProperties
-	p.ChartProperties.Horizontal = ChartOrientation.GetContent.String
-	chart.SetProperties p
-End Sub
+_Sub ReverseOrientation_
+
+	_set ChartOrientation = ActiveDocument.Variables("vChartOrientation")_
+	
+	_set chart = ActiveDocument.GetSheetObject("CH01")_
+	
+	_set p = chart.GetProperties_
+	
+	_p.ChartProperties.Horizontal = ChartOrientation.GetContent.String_
+	
+	_chart.SetProperties p_
+	
+_End Sub_
 
 Sub SetNulls
 	set ChartNull = ActiveDocument.Variables("vChartNulls")
