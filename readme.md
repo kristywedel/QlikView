@@ -14,6 +14,8 @@ In this example, these variables were created in the script.
 	LET vChartNulls = 'true';
 
 ###Step 2: Change macro to use object name.
+Add the code below to the macros and modify the line set chart = ActiveDocument.GetSheetObject("CH01")  with the object id in the QlikView in the code.
+
 	Sub ReverseOrientation
 		set ChartOrientation = ActiveDocument.Variables("vChartOrientation")
 		set chart = ActiveDocument.GetSheetObject("CH01") 
@@ -30,8 +32,6 @@ In this example, these variables were created in the script.
 		dims(0).NullSuppression = ChartNull.GetContent.String	
 		chart.SetProperties cp	
 	End Sub
-
-Modify the line set chart = ActiveDocument.GetSheetObject("CH01") with the object id in the QlikView.
 
 ###Step 3: Make a text object/button to set variable and run macro.
 Add two actions to the text or button object. One action will toggle the variable and the other will run the macro. 
